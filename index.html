@@ -3,28 +3,77 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!--link rel="stylesheet" href="css/index.css"-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   		<style>
   			.background{
-  				background-color: #71e6f0;
+  				background-color: #f2f2f2;
   				color: #464b4b;
   				text-align: center;
   			}
+  			.formfields{
+  				padding-left: 250px;
+  				padding-top: 30px;
+  			}
+  			.submitButton{
+  				padding-top: 20px;
+  			}
+
   		</style>
 	</head>
-	<body>
-	<div class="background">
+	<body class="background">
 		<div class="container">
-			<h1>Hello!</h1>
-			<form action"" method="post" enctype="multipart/form-data">
-				First Name: <input type="text" id="fname" name="fname" value="" size="25" maxlength="50"/></br>
-				Last Name: <input type="text" id="lname" name="lname" value="" size="25" maxlength="50"/></br>
-				Age: <input type="number" id="age" name="age" value="" size="25" min="0" step="1"></br>
-				<input type="submit" id="submit" name="submit" value="Submit">
-			</form>
+			<div class="title">
+				<p style="font-size: 150px; padding-top: 100px">Hello</p>
+				<p style="font-size: 50px;">Please tell me a little bit about yourself!</p>
+			</div>
+			<div class="formfields">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="fname">First Name:</label>
+	      				<div class="col-sm-5">
+	       			 		<input type="firstname" class="form-control" id="fname" placeholder="Enter Your First Name">
+	     				</div>
+	    			</div>
+				</form>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="lname">Last Name:</label>
+	      				<div class="col-sm-5">
+	       			 		<input type="lastname" class="form-control" id="lname" placeholder="Enter Your Last Name">
+	     				</div>
+	    			</div>
+				</form>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="age">Age:</label>
+	      				<div class="col-sm-5">
+	       			 		<input type="lastname" class="form-control" id="age" placeholder="Enter Your Last Name">
+	     				</div>
+	    			</div>
+				</form>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="control-label col-sm-2">Sex:</label>
+						<label class="radio-inline" style="padding-right: 50px">
+					     	<input type="radio" name="optradio">Female
+					    </label>
+					    <label class="radio-inline" style="padding-right: 50px">
+					     	<input type="radio" name="optradio">Male
+					    </label>
+					    <label class="radio-inline" style="padding-right: 430px">
+					     	<input type="radio" name="optradio">Other
+					    </label>
+	    			</div>
+				</form>
+			</div>
+			<div class="submitButton">
+			    <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" class="btn btn-default">Submit</button>
+			    </div>
+			</div>
 		</div>
-	</div>
 	</body>
 </html>
