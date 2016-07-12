@@ -1,0 +1,24 @@
+{
+  "name": "visitme",
+  "version": "1.0.0",
+  "description": "Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karen-lo/VisitMe.git"
+  },
+  "author": "Karen Lo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karen-lo/VisitMe/issues"
+  },
+  "homepage": "https://github.com/karen-lo/VisitMe#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.6",
+    "express": "^4.14.0"
+  }
+}

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"urlenco",
+				"urlencodedParser"
+			],
+			[
 				"urllib",
 				"urllib2"
 			],
@@ -36,18 +40,18 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "app/views/index.html",
 			"settings":
 			{
-				"buffer_size": 105,
-				"line_ending": "Unix"
+				"buffer_size": 2554,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.css",
+			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 110,
+				"buffer_size": 938,
 				"line_ending": "Windows"
 			}
 		}
@@ -84,6 +88,15 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/index.html",
+		"/C/Users/Karen/Documents/VisitMe/js/server.js",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/css/bootstrap.min.css",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/js/bootstrap.js",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/js/bootstrap.min.js",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/css/bootstrap.css",
+		"/C/Users/Karen/Google Drive/College/Internship/SDSC/Server/main.js",
+		"/C/Users/Karen/Documents/VisitMe/package.json",
+		"/C/Users/Karen/Documents/VisitMe/index.css",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/commonWord.py",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/wordFreq.py",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/writeKeyword.py",
@@ -94,7 +107,6 @@
 		"/C/Users/Karen/Documents/karen-lo.github.io/index.html",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/removeDuplicate.py",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/Server/index.html",
-		"/C/Users/Karen/Google Drive/College/Internship/SDSC/Server/main.js",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/Data/IGNORE.txt",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/writeKeywords",
 		"/C/Users/Karen/Downloads/codebeautify.json",
@@ -165,24 +177,25 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "app/views/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 105,
+						"buffer_size": 2554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								105,
-								105
+								379,
+								379
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -193,24 +206,24 @@
 				},
 				{
 					"buffer": 1,
-					"file": "index.css",
+					"file": "server.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 110,
+						"buffer_size": 938,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								110,
-								110
+								293,
+								293
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
