@@ -43,7 +43,7 @@
 			"file": "app/views/index.html",
 			"settings":
 			{
-				"buffer_size": 2554,
+				"buffer_size": 2550,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 938,
+				"buffer_size": 1554,
 				"line_ending": "Windows"
 			}
 		}
@@ -88,6 +88,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
 		"/C/Users/Karen/Documents/VisitMe/index.html",
 		"/C/Users/Karen/Documents/VisitMe/js/server.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -181,15 +182,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2554,
+						"buffer_size": 2550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								379,
-								379
+								927,
+								927
 							]
 						],
 						"settings":
@@ -198,7 +199,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -210,15 +211,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 938,
+						"buffer_size": 1554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								293,
-								293
+								51,
+								51
 							]
 						],
 						"settings":
