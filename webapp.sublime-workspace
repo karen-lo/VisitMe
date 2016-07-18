@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"not",
+				"notEmpty"
+			],
+			[
+				"valid",
+				"validators"
+			],
+			[
+				"boot",
+				"bootstrapValidator"
+			],
+			[
+				"first",
+				"firstname"
+			],
+			[
 				"urlenco",
 				"urlencodedParser"
 			],
@@ -43,7 +59,7 @@
 			"file": "app/views/index.html",
 			"settings":
 			{
-				"buffer_size": 2550,
+				"buffer_size": 3796,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +67,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 1554,
+				"buffer_size": 1735,
 				"line_ending": "Windows"
 			}
 		}
@@ -88,6 +104,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/node_modules/nghuuphuoc-bootstrapvalidator-aae9288/dist/js/bootstrapValidator.js",
 		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
 		"/C/Users/Karen/Documents/VisitMe/index.html",
 		"/C/Users/Karen/Documents/VisitMe/js/server.js",
@@ -182,15 +199,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2550,
+						"buffer_size": 3796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								927,
-								927
+								886,
+								886
 							]
 						],
 						"settings":
@@ -199,7 +216,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 720.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -211,15 +228,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1554,
+						"buffer_size": 1735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
+								366,
+								366
 							]
 						],
 						"settings":

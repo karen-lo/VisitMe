@@ -13,8 +13,10 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var path = __dirname + '/app/views/';
 
 // Creating static links
-app.use(express.static('public'));
-app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/public', express.static(__dirname + '/public'));
+app.use('/bs', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+app.use('/jq', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/validator', express.static(__dirname + '/node_modules/nghuuphuoc-bootstrapvalidator-aae9288/dist/'));
 
 // Connect to database
 MongoClient.connect('mongodb://admin:visitme@ds053972.mlab.com:53972/visitme', 
