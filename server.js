@@ -62,8 +62,8 @@ app.post("/visitors", urlencodedParser, function(req, res) {
 	});
 
 	console.log(response);
-	//res.end(JSON.stringify(response));
-	res.sendFile(path + "visualize.html");
+	res.end(JSON.stringify(response));
+	//res.sendFile(path + "visualize.html");
 });
 
 // Serve 404 if page not found
