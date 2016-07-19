@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://admin:visitme@ds053972.mlab.com:53972/visitme',
 	db = database;
 
 	// Create local host
-	app.listen(3000,function(){
+	app.listen(process.env.PORT || 3000,function(){
 	  console.log("Live at Port 3000");
 	});
 });
