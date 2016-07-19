@@ -59,7 +59,7 @@
 			"file": "app/views/index.html",
 			"settings":
 			{
-				"buffer_size": 3796,
+				"buffer_size": 2982,
 				"line_ending": "Windows"
 			}
 		},
@@ -67,7 +67,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 1735,
+				"buffer_size": 1759,
 				"line_ending": "Windows"
 			}
 		}
@@ -104,6 +104,8 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/public/js/formvalidator.js",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/mongodb/test8.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/nghuuphuoc-bootstrapvalidator-aae9288/dist/js/bootstrapValidator.js",
 		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
 		"/C/Users/Karen/Documents/VisitMe/index.html",
@@ -190,7 +192,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -199,15 +201,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3796,
+						"buffer_size": 2982,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								886,
-								886
+								650,
+								650
 							]
 						],
 						"settings":
@@ -216,10 +218,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -228,15 +230,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1735,
+						"buffer_size": 1759,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								366,
-								366
+								436,
+								436
 							]
 						],
 						"settings":
@@ -247,7 +249,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -306,12 +308,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 625.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"C:\\Users\\Karen\\Google Drive\\College\\Internship\\SDSC\\linkedData.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 475.0
 	},
 	"select_symbol":
 	{
