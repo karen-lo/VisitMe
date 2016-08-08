@@ -1,10 +1,12 @@
 // Server code for website
 // MongoLab Cloud Server: https://mlab.com/home
 // To run nodemon: ./node_modules/.bin/nodemon server.js
+// To push to heroku: git push heroku master
 
 var express = require("express");
 var bodyParser = require("body-parser");
 var MongoClient = require("mongodb").MongoClient;
+var d3 = require("d3");
 var db;
 
 var app = express();
@@ -18,6 +20,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/bs', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 app.use('/jq', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use('/validator', express.static(__dirname + '/node_modules/nghuuphuoc-bootstrapvalidator-aae9288/dist/'));
+app.use('/d3', express.static(__dirname + '/node_modules/d3/build/'));
 
 // Connect to database
 MongoClient.connect('mongodb://admin:visitme@ds053972.mlab.com:53972/visitme', 
@@ -64,7 +67,7 @@ app.post("/visitors", urlencodedParser, function(req, res) {
 
 	console.log(response);
 	//res.end(JSON.stringify(response));
-	res.sendFile(path + "visualize.html");
+	res.sendFile(path + "visitorMenu.html");
 });
 
 // Serve 404 if page not found
