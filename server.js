@@ -1,5 +1,6 @@
 // Server code for website
 // MongoLab Cloud Server: https://mlab.com/home
+// To run nodemon: ./node_modules/.bin/nodemon server.js
 
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -25,7 +26,7 @@ MongoClient.connect('mongodb://admin:visitme@ds053972.mlab.com:53972/visitme',
 	db = database;
 
 	// Create local host
-	app.listen(process.env.PORT || 3000,function(){
+	app.listen(process.env.PORT || 3000, function(){
 	  console.log("Live at Port 3000");
 	});
 });
@@ -62,8 +63,8 @@ app.post("/visitors", urlencodedParser, function(req, res) {
 	});
 
 	console.log(response);
-	res.end(JSON.stringify(response));
-	//res.sendFile(path + "visualize.html");
+	//res.end(JSON.stringify(response));
+	res.sendFile(path + "visualize.html");
 });
 
 // Serve 404 if page not found
