@@ -4,12 +4,56 @@
 		"selected_items":
 		[
 			[
-				"align",
-				"align-content"
+				"font",
+				"font-family"
 			],
 			[
 				"margin",
-				"margin-top"
+				"margin-bottom"
+			],
+			[
+				"rand",
+				"randint"
+			],
+			[
+				"first",
+				"firstnameArray"
+			],
+			[
+				"fire",
+				"firstnamedata"
+			],
+			[
+				"firstn",
+				"firstnameArray"
+			],
+			[
+				"fir",
+				"firstnameDict"
+			],
+			[
+				"firstname",
+				"firstnameArray"
+			],
+			[
+				"pr",
+				"property"
+			],
+			[
+				"tras",
+				"translateY()"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ali",
+				"align-content"
+			],
+			[
+				"align",
+				"align-self"
 			],
 			[
 				"not",
@@ -22,10 +66,6 @@
 			[
 				"boot",
 				"bootstrapValidator"
-			],
-			[
-				"first",
-				"firstname"
 			],
 			[
 				"urlenco",
@@ -67,23 +107,23 @@
 			"file": "app/views/index.html",
 			"settings":
 			{
-				"buffer_size": 3007,
+				"buffer_size": 3028,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/404.html",
+			"file": "app/views/visitorMenu.html",
 			"settings":
 			{
-				"buffer_size": 757,
+				"buffer_size": 11037,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/visualize.html",
+			"file": "app/views/firstname.html",
 			"settings":
 			{
-				"buffer_size": 13111,
+				"buffer_size": 3386,
 				"line_ending": "Windows"
 			}
 		},
@@ -99,7 +139,7 @@
 			"file": "server.js",
 			"settings":
 			{
-				"buffer_size": 1879,
+				"buffer_size": 2955,
 				"line_ending": "Windows"
 			}
 		}
@@ -136,12 +176,26 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/database/temp.py",
+		"/C/Users/Karen/Documents/VisitMe/temp.py",
+		"/C/Users/Karen/Documents/VisitMe/tempNationalNames.csv",
+		"/C/Users/Karen/Documents/VisitMe/tempNationalNames2.csv",
+		"/C/Users/Karen/Documents/VisitMe/temp2.txt",
+		"/C/Users/Karen/Documents/VisitMe/NationalNames.csv",
+		"/C/Users/Karen/Downloads/us-baby-names-release-2015-12-18-00-53-48/output/NationalNames.csv",
+		"/C/Users/Karen/Google Drive/College/Internship/SDSC/FirstTry/filechange.py",
+		"/C/Users/Karen/Documents/VisitMe/temp.txt",
+		"/C/Users/Karen/Google Drive/College/Internship/SDSC/webcrawler/runCrawler.py",
+		"/C/Users/Karen/Documents/VisitMe/app/views/firstname.html",
+		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
+		"/C/Users/Karen/Documents/VisitMe/package.json",
+		"/C/Users/Karen/Documents/VisitMe/app/views/visualize.html",
+		"/C/Users/Karen/Documents/VisitMe/node_modules/d3/node_modules/d3-scale/build/d3-scale.min.js",
 		"/C/Users/Karen/Documents/VisitMe/main_bubble.json",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/nodemon/lib/config/command.js",
 		"/C/Users/Karen/Documents/VisitMe/public/js/formvalidator.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/mongodb/test8.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/nghuuphuoc-bootstrapvalidator-aae9288/dist/js/bootstrapValidator.js",
-		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
 		"/C/Users/Karen/Documents/VisitMe/index.html",
 		"/C/Users/Karen/Documents/VisitMe/js/server.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -149,7 +203,6 @@
 		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/js/bootstrap.min.js",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/bootstrap/dist/css/bootstrap.css",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/Server/main.js",
-		"/C/Users/Karen/Documents/VisitMe/package.json",
 		"/C/Users/Karen/Documents/VisitMe/index.css",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/commonWord.py",
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/wordFreq.py",
@@ -208,6 +261,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bld",
+			"james",
+			"){\n",
 			"right",
 			"d3.",
 			"bubble menu",
@@ -239,24 +295,25 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3007,
+						"buffer_size": 3028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1296,
-								1296
+								2713,
+								2713
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 338.0,
+						"translation.y": 648.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -264,27 +321,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/404.html",
+					"file": "app/views/visitorMenu.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 757,
+						"buffer_size": 11037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								373,
-								373
+								873,
+								873
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -292,29 +351,29 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/visualize.html",
+					"file": "app/views/firstname.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13111,
+						"buffer_size": 3386,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2215,
-								2215
+								1551,
+								1551
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 3,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1280.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -333,8 +392,8 @@
 						"selection":
 						[
 							[
-								895,
-								895
+								31,
+								31
 							]
 						],
 						"settings":
@@ -356,15 +415,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1879,
+						"buffer_size": 2955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1024,
-								1024
+								131,
+								94
 							]
 						],
 						"settings":

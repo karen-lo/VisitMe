@@ -9,18 +9,27 @@
 
     <script src="/jq/jquery-2.2.4.min.js"></script>
     <script src="/bs/js/bootstrap.min.js"></script>
+    <script src="/d3/d3.v3.min.js"></script>
 
     <style type="text/css">
+      #background{
+          background-color: #f2f2f2;
+          color: #464b4b;
+          text-align: center;
+      }
+
       #header {
         font-size: 65px;
         margin-top: 5%;
         text-align: left;
+        padding-left: 100px;
       }
 
       #subheader {
         font-size: 30px;
         margin-top: 3%;
         text-align: left;
+        padding-left: 100px;
       }
 
       #mainBubble {
@@ -45,11 +54,11 @@
         stroke-width: 5px;    
       }
     </style>
-
-    <script type="text/javascript" src="/d3/d3.v3.min.js" charset="utf-8"></script>
   </head>
+
   <title>Visitor Menu</title>
-  <body style="margin: 0 auto; max-width: 100em;">
+  
+  <body style="margin: 0 auto; max-width: 100em;" class="background">
     <div>
       <p id="header">Thank you for visiting!</p>
       <p id="subheader">Check out who else has dropped by:</p>
@@ -91,6 +100,7 @@
         svgContainer.style("height",h+"px");
                
         var colVals = d3.scale.category10();
+        var pages = {"First Name": "firstname", "Last Name": "lastname", "Age": "age", "Gender": "gender"};
                
         bubbleObj.append("circle")
           .attr("class", "topBubble")
@@ -103,7 +113,9 @@
           .on("mouseover", function(d,i) {return activateBubble(d,i);})
           .attr("cursor","pointer")
           .on("click", function(d,i) {
-              window.open(d.address);                 
+            var page = pages[d.name];
+            window.location.href=page;
+            // call ajax
           });
                
                    
@@ -118,7 +130,11 @@
           .attr("alignment-baseline", "middle")
           .attr("cursor","pointer")
           .text(function(d) {return d.name})      
-          .on("mouseover", function(d,i) {return activateBubble(d,i);});
+          .on("mouseover", function(d,i) {return activateBubble(d,i);})
+          .on("click", function(d,i) {
+            var page = pages[d.name];
+            window.location.href=page;
+          });
                
                
       //   for(var iB = 0; iB < nTop; iB++) {

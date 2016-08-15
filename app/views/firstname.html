@@ -1,0 +1,112 @@
+<!-- D3 word cloud library: https://github.com/jasondavies/d3-cloud by Jason Davies; Implementation example: http://bl.ocks.org/ericcoopey/6382449 by Eric Coopey-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/bs/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/validator/css/bootstrapValidator.min.css">
+
+		<script src="/jq/jquery-2.2.4.min.js"></script>
+  		<script src="/bs/js/bootstrap.min.js"></script>
+  		<script src="/d3/d3.v3.min.js"></script>
+  		<script src="/cloud/d3.layout.cloud.js"></script>
+
+		<style>
+  			.background{
+  				background-color: #f2f2f2;
+  				color: #464b4b;
+  				text-align: center;
+  				margin: 0 auto;
+  				max-width: 100em;
+  			}
+  			.header {
+	        font-size: 65px;
+	        margin-top: 5%;
+	        text-align: left;
+	        padding-left: 100px;
+	      }
+
+	      .subheader {
+	        font-size: 30px;
+	        margin-top: 1%;
+	        margin-bottom: 5%;
+	        text-align: left;
+	        padding-left: 100px;
+	      }
+  		</style>
+  		<style>
+	   	.body {
+	        	font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+	    	}
+	    	.legend {
+	        	border: 1px solid #555555;
+	        	border-radius: 5px 5px 5px 5px;
+	        	font-size: 0.8em;
+	        	margin: 10px;
+	        	padding: 8px;
+	    	}
+		    .bld {
+		        font-weight: bold;
+		    }
+		</style>
+  	</head>
+  	<body class="background">
+		<div class="container">
+		<!--add back button-->
+			<div class="title">
+				<p class="header">First names of fellow visitors:</p>
+				<p class="subheader">Can you find yours?</p>
+			</div>
+		</div>
+		<script>
+			var frequency_list;
+		   var color = d3.scale.linear()
+		   	.domain([0,1,2,3,4,5,6,10,15,20,100])
+		   	.range(["#FBA7AB", "#D6EF9F", "#C986AF", "#D1686D", "#A8C764", "#A75486", "#7D151A", "#597814", "#641143", "#540004", "#375000", "#430029"]);
+
+
+		    $(document).ready(function() {
+
+				$.ajax({url: "/firstnamedata",
+					type: "GET",
+					success: function(output) {
+						console.log("called");
+						frequency_list = output;
+						d3.layout.cloud().size([1000, 550])
+		      			.words(frequency_list)
+		      			.rotate(0)
+		      			.fontSize(function(d) { return d.size; })
+		      			.padding(5)
+		      			.on("end", draw)
+		      			.start();
+					},
+					error: function(err) {
+						console.log(123);
+					}
+				});
+			});
+
+		    function draw(words) {
+		      d3.select("body").append("svg")
+		      	.attr("width", 2000)
+		         .attr("height", 650)
+		         .attr("class", "wordcloud")
+		         .append("g")
+		         // without the transform, words words would get cutoff to the left and top, they would
+		         // appear outside of the SVG area
+		         .attr("transform", "translate(550,300)")
+		         .selectAll("text")
+		         .data(words)
+		         .enter().append("text")
+		         .style("font-size", function(d) { return d.size + "px"; })
+		         .style("font-family", function(d) { return "\"Lucida Console\", Courier, monospace"; })
+		         .style("fill", function(d, i) { return color(i); })
+		         .attr("transform", function(d) {
+		         	return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+		         })
+		         .text(function(d) { return d.text; });
+		   }
+		</script>
+	</body>
+</html>
