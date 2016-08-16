@@ -19,10 +19,10 @@ var path = __dirname + '/app/views/';
 // Creating static links
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/bs', express.static(__dirname + '/node_modules/bootstrap/dist/'));
-app.use('/jq', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/jq', express.static(__dirname + '/public/vendor/jquery/dist/'));
 app.use('/validator', express.static(__dirname + '/node_modules/bs-validator/dist/'));
 app.use('/d3', express.static(__dirname + '/node_modules/d3/build/'));
-app.use('/cloud', express.static(__dirname + '/node_modules/d3-cloud-master/build/'));
+app.use('/cloud', express.static(__dirname + '/node_modules/d3-cloud/build/'));
 
 // Connect to database
 MongoClient.connect('mongodb://admin:visitme@ds053972.mlab.com:53972/visitme', 
