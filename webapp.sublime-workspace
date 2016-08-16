@@ -176,6 +176,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Karen/Documents/VisitMe/package.json",
 		"/C/Users/Karen/Documents/VisitMe/database/temp.py",
 		"/C/Users/Karen/Documents/VisitMe/temp.py",
 		"/C/Users/Karen/Documents/VisitMe/tempNationalNames.csv",
@@ -188,7 +189,6 @@
 		"/C/Users/Karen/Google Drive/College/Internship/SDSC/webcrawler/runCrawler.py",
 		"/C/Users/Karen/Documents/VisitMe/app/views/firstname.html",
 		"/C/Users/Karen/Documents/VisitMe/app/views/404.html",
-		"/C/Users/Karen/Documents/VisitMe/package.json",
 		"/C/Users/Karen/Documents/VisitMe/app/views/visualize.html",
 		"/C/Users/Karen/Documents/VisitMe/node_modules/d3/node_modules/d3-scale/build/d3-scale.min.js",
 		"/C/Users/Karen/Documents/VisitMe/main_bubble.json",
@@ -286,7 +286,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -346,7 +346,7 @@
 						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -376,7 +376,7 @@
 						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -406,7 +406,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -422,8 +422,8 @@
 						"selection":
 						[
 							[
-								131,
-								94
+								176,
+								176
 							]
 						],
 						"settings":
@@ -435,7 +435,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
