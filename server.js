@@ -20,8 +20,8 @@ var path = __dirname + '/app/views/';
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/bs', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 app.use('/jq', express.static(__dirname + '/public/vendor/jquery/dist/'));
-app.use('/validator', express.static(__dirname + '/node_modules/bs-validator/dist/'));
-app.use('/d3', express.static(__dirname + '/node_modules/d3/build/'));
+app.use('/validator', express.static(__dirname + '/public/vendor/nghuuphuoc-bootstrapvalidator-aae9288/dist/'));
+app.use('/d3', express.static(__dirname + '/public/vendor/d3/'));
 app.use('/cloud', express.static(__dirname + '/node_modules/d3-cloud/build/'));
 
 // Connect to database
@@ -101,7 +101,7 @@ app.get("/firstnamedata", function(req, res) {
 			firstnameArray.push(map);
 		}
 
-		console.log(firstnameArray);
+		//console.log(firstnameArray);
 		res.send(firstnameArray);
 	});
 	
