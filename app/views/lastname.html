@@ -64,7 +64,7 @@
 		</div>
 		<div class="container">
 			<div class="title">
-				<p class="header">First names of fellow visitors:</p>
+				<p class="header">Last names of fellow visitors:</p>
 				<p class="subheader">Can you find yours?</p>
 			</div>
 			<div id="wordcloud"></div>
@@ -79,12 +79,12 @@
 			var frequency_list;
 		   var color = d3.scale.linear()
 		   	.domain([0,1,2,3,4,5,6,10,15,20,100])
-		   	.range(["#ccf5ff", "#99ebff", "#66e0ff", "#33d6ff", "#00ccff", "#00a3cc", "#007a99", "#006680", "#005266", "#003d4d", "#002933", "#00141a"]);
+		   	.range(["#c6ffb3", "#9fff80", "#8cff66", "#66ff33", "#40ff00", "#39e600", "#33cc00", "#2db300", "#269900", "#208000", "#1a6600", "#1a6600"]);
 
 
 		    $(document).ready(function() {
 
-				$.ajax({url: "/firstnamedata",
+				$.ajax({url: "/lastnamedata",
 					type: "GET",
 					success: function(output) {
 						console.log("called");

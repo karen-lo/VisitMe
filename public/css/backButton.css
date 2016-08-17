@@ -1,0 +1,59 @@
+/*https://codepen.io/brucekean/pen/wWamgJ by Bruce Kean*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+  margin-top: 2%;
+  position: relative;
+  width: 70px;
+  height: 50px;
+  line-height: 50px;
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  text-align: right;
+  color: #3C474B;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #3C474B;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(1, 0.52, 0.7, 1.03);
+  transition-delay: .2s;
+}
+
+.button__text {
+  opacity: 0;
+  transition: 0.2s cubic-bezier(1, 0.52, 0.7, 1.03);
+}
+
+.button__arrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+  width: 70px;
+  fill: #3C474B;
+  transition: 0.2s cubic-bezier(1, 0.52, 0.7, 1.03);
+}
+
+.back_button {
+  padding-left: 100px;
+}
+
+/* Hover styles */
+button:hover {
+  width: 170px;
+  transition-delay: 0s;
+}
+
+button:hover .button__text {
+  opacity: 1;
+  transition: 0.2s cubic-bezier(1, 0.52, 0.7, 1.03);
+  transition-delay: .15s;
+}

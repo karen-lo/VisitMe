@@ -90,7 +90,7 @@ app.get("/firstnamedata", function(req, res) {
 				firstnameDict[fname] = 1;
 			}
 		}
-		console.log(firstnameDict);
+		//console.log(firstnameDict);
 		
 		// Put into an array
 		for(var fname in firstnameDict) {
@@ -106,6 +106,46 @@ app.get("/firstnamedata", function(req, res) {
 	});
 	
 });
+
+app.get("/lastnamedata", function(req, res) {
+	// Grab from database
+	var cursor = db.collection('visitors').find();
+	var lastnameDict = {};
+	var lastnameArray = [];
+
+	// Count all the first names
+	cursor.toArray(function(err, results) {
+		for(i=0; i<results.length; i++) {
+
+			var lname = results[i]["lastname"];
+
+			if(lname in lastnameDict) {
+				lastnameDict[lname] = lastnameDict[lname] + 1;
+			} else {
+				lastnameDict[lname] = 1;
+			}
+		}
+		//console.log(lastnameDict);
+		
+		// Put into an array
+		for(var lname in lastnameDict) {
+			var map = {
+					text: lname,
+					size: lastnameDict[lname]
+				};
+			lastnameArray.push(map);
+		}
+
+		//console.log(lastnameArray);
+		res.send(lastnameArray);
+	});
+	
+});
+
+app.get("/lastname", function(req, res) {
+	res.sendFile(path + "lastname.html");
+});
+
 
 app.get("/firstname", function(req, res) {
 	res.sendFile(path + "firstname.html");
