@@ -1,0 +1,121 @@
+<!-- D3 word cloud library: https://github.com/jasondavies/d3-cloud by Jason Davies; Implementation example: http://bl.ocks.org/ericcoopey/6382449 by Eric Coopey-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/bs/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/public/css/backButton.css">
+
+		<script src="/jq/jquery-2.2.4.min.js"></script>
+  		<script src="/bs/js/bootstrap.min.js"></script>
+  		<script src="/d3/d3.v3.min.js"></script>
+  		<script src="/public/js/liquidFillGauge.js"></script>
+  		<script>
+			function goBack() {
+			    window.location.href="visitors";
+			}
+		</script>
+
+		<style>
+  			.background{
+  				background-color: #f2f2f2;
+  				color: #464b4b;
+  			}
+
+  			.header {
+		        font-size: 65px;
+		        margin-top: 2%;
+		        text-align: left;
+	      	}
+
+	      	.subheader {
+		        font-size: 30px;
+		        margin-top: 1%;
+		        margin-bottom: 3%;
+		        text-align: left;
+	      	}
+
+	      	.genderName {
+	      		font-size: 80px;
+	      		font-weight: 900;
+		        	margin-bottom: 2%;
+		        	text-align: center;
+		        	color: #FF4444;
+	      	}
+  		</style>
+  		<style>
+        	.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+    	</style>
+  	</head>
+  	<body class="background">
+  		<div class="back_button">
+		  <button onclick="goBack()">
+		    <svg viewBox="0 0 100 23" class="button__arrow">
+		      <path d="M1.546 13h94.31v-3h-95.85600000000001v3zM98.496 10.439l-9.276-9-1.093-1.061-2.186 2.121 1.093 1.061 9.276 9 1.093 1.061 2.186-2.121zM96.309 10.439l-9.276 9-1.093 1.061 2.186 2.121 1.093-1.061 9.276-9 1.093-1.061-2.186-2.121z"/>
+		    </svg>  
+		    <div class="button__text">MENU</div>
+		  </button>
+		</div>
+		<div class="container">
+			<div class="title">
+				<p class="header">The gender of fellow visitors:</p>
+				<p class="subheader">Click the gauge to see the statistics!</p>
+				<p class="genderName" id="genderName"></p>
+				<svg id="gauge1" style="padding-left: 10px; cursor: pointer;"width="100%" height="450" onclick="gauge1.update(getData());"></svg>
+			</div>
+		</div>
+		
+		<script language="JavaScript">
+		    var config1 = liquidFillGaugeDefaultSettings();
+		    config1.circleColor = "#FF7777";
+		    config1.textColor = "#FF4444";
+		    config1.waveTextColor = "#FFAAAA";
+		    config1.waveColor = "#FFDDDD";
+		    config1.circleThickness = 0.15;
+		    config1.textVertPosition = 0.5;
+		    config1.waveAnimateTime = 500;
+		    var gauge1= loadLiquidFillGauge("gauge1", 0, config1);
+		    var num;
+		    var count = -1;
+
+		   function getData() {
+		  		var genderStats = {};
+		   	var keys = [];
+
+				$.ajax({url: "/genderdata",
+					type: "GET",
+					async: false,
+					success: function(output) {
+						
+						genderStats = output;
+
+						// Grab key names
+						for(var key in genderStats) {
+							if(genderStats.hasOwnProperty(key)) {
+								keys.push(key);
+							}
+						}
+
+						// Increment or reset count
+						if(count < 2) {
+							count++;
+						} else {
+							count = 0;
+						}
+
+						// Change writing in text
+						document.getElementById("genderName").innerHTML = keys[count];
+						console.log(genderStats[keys[count]]);
+						num = genderStats[keys[count]];
+											
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+				return num;
+		   }
+		</script>
+	</body>
+</html>

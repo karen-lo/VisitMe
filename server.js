@@ -7,7 +7,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var MongoClient = require("mongodb").MongoClient;
 var d3 = require("d3");
-//var cloud = require("d3.layout.cloud")
 var db;
 
 var app = express();
@@ -72,40 +71,36 @@ app.post("/visitors", urlencodedParser, function(req, res) {
 	res.sendFile(path + "visitorMenu.html");
 });
 
-app.get("/firstnamedata", function(req, res) {
+app.get("/visitors", function(req, res) {
+	res.sendFile(path + "visitorMenu.html");
+})
+
+app.get("/genderdata", function(req, res) {
 	// Grab from database
 	var cursor = db.collection('visitors').find();
-	var firstnameDict = {};
-	var firstnameArray = [];
-
+	var genderDict = {};
+	
 	// Count all the first names
 	cursor.toArray(function(err, results) {
 		for(i=0; i<results.length; i++) {
 
-			var fname = results[i]["firstname"];
+			var gender = results[i]["sex"];
 
-			if(fname in firstnameDict) {
-				firstnameDict[fname] = firstnameDict[fname] + 1;
+			if(gender in genderDict) {
+				genderDict[gender] = genderDict[gender] + 1;
 			} else {
-				firstnameDict[fname] = 1;
+				genderDict[gender] = 1;
 			}
 		}
-		//console.log(firstnameDict);
-		
-		// Put into an array
-		for(var fname in firstnameDict) {
-			var map = {
-				text: fname,
-				size: firstnameDict[fname]
-			};
-			firstnameArray.push(map);
-		}
 
-		//console.log(firstnameArray);
-		res.send(firstnameArray);
+		for(var gender in genderDict) {
+			genderDict[gender] = genderDict[gender]/results.length * 100;
+		}
+		
+		res.send(genderDict);
 	});
-	
 });
+
 
 app.get("/lastnamedata", function(req, res) {
 	// Grab from database
@@ -141,6 +136,45 @@ app.get("/lastnamedata", function(req, res) {
 	});
 	
 });
+
+app.get("/firstnamedata", function(req, res) {
+	// Grab from database
+	var cursor = db.collection('visitors').find();
+	var firstnameDict = {};
+	var firstnameArray = [];
+
+	// Count all the first names
+	cursor.toArray(function(err, results) {
+		for(i=0; i<results.length; i++) {
+
+			var fname = results[i]["firstname"];
+
+			if(fname in firstnameDict) {
+				firstnameDict[fname] = firstnameDict[fname] + 1;
+			} else {
+				firstnameDict[fname] = 1;
+			}
+		}
+		//console.log(firstnameDict);
+		
+		// Put into an array
+		for(var fname in firstnameDict) {
+			var map = {
+				text: fname,
+				size: firstnameDict[fname]
+			};
+			firstnameArray.push(map);
+		}
+
+		//console.log(firstnameArray);
+		res.send(firstnameArray);
+	});
+	
+});
+
+app.get("/gender", function(req, res) {
+	res.sendFile(path + "gender.html");
+})
 
 app.get("/lastname", function(req, res) {
 	res.sendFile(path + "lastname.html");

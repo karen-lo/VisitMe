@@ -11,6 +11,11 @@
   		<script src="/bs/js/bootstrap.min.js"></script>
   		<script src="/d3/d3.v3.min.js"></script>
   		<script src="/cloud/d3.layout.cloud.js"></script>
+  		<script>
+			function goBack() {
+			    window.location.href="visitors";
+			}
+		</script>
 
 		<style>
   			.background{
@@ -19,17 +24,17 @@
   			}
 
   			.header {
-	        font-size: 65px;
-	        margin-top: 3%;
-	        text-align: left;
-	      }
+		    	font-size: 65px;
+		        margin-top: 2%;
+		        text-align: left;
+		    }
 
-	      .subheader {
-	        font-size: 30px;
-	        margin-top: 1%;
-	        margin-bottom: 5%;
-	        text-align: left;
-	      }
+		    .subheader {
+		        font-size: 30px;
+		        margin-top: 0.5%;
+		        margin-bottom: 2%;
+		        text-align: left;
+		    }
   		</style>
   		<style>
 	   	.body {
@@ -59,7 +64,7 @@
 		    <svg viewBox="0 0 100 23" class="button__arrow">
 		      <path d="M1.546 13h94.31v-3h-95.85600000000001v3zM98.496 10.439l-9.276-9-1.093-1.061-2.186 2.121 1.093 1.061 9.276 9 1.093 1.061 2.186-2.121zM96.309 10.439l-9.276 9-1.093 1.061 2.186 2.121 1.093-1.061 9.276-9 1.093-1.061-2.186-2.121z"/>
 		    </svg>  
-		    <div class="button__text">BACK</div>
+		    <div class="button__text">MENU</div>
 		  </button>
 		</div>
 		<div class="container">
@@ -69,12 +74,6 @@
 			</div>
 			<div id="wordcloud"></div>
 		</div>
-		
-		<script>
-			function goBack() {
-			    window.history.back();
-			}
-		</script>
 		<script>
 			var frequency_list;
 		   var color = d3.scale.linear()
@@ -105,7 +104,7 @@
 
 		    function draw(words) {
 		      d3.select("#wordcloud").append("svg")
-		      	.attr("width", 2000)
+		      	.attr("width", 1500)
 		         .attr("height", 650)
 		         .attr("class", "wordcloud")
 		         .append("g")

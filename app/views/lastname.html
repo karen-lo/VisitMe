@@ -11,6 +11,11 @@
   		<script src="/bs/js/bootstrap.min.js"></script>
   		<script src="/d3/d3.v3.min.js"></script>
   		<script src="/cloud/d3.layout.cloud.js"></script>
+  		<script>
+			function goBack() {
+			    window.location.href="visitors";
+			}
+		</script>
 
 		<style>
   			.background{
@@ -19,17 +24,17 @@
   			}
 
   			.header {
-	        font-size: 65px;
-	        margin-top: 3%;
-	        text-align: left;
-	      }
+		        font-size: 65px;
+		        margin-top: 2%;
+		        text-align: left;
+	      	}
 
-	      .subheader {
-	        font-size: 30px;
-	        margin-top: 1%;
-	        margin-bottom: 5%;
-	        text-align: left;
-	      }
+	      	.subheader {
+	        	font-size: 30px;
+	        	margin-top: 0.5%;
+	        	margin-bottom: 2%;
+	        	text-align: left;
+	      	}
   		</style>
   		<style>
 	   	.body {
@@ -59,7 +64,7 @@
 		    <svg viewBox="0 0 100 23" class="button__arrow">
 		      <path d="M1.546 13h94.31v-3h-95.85600000000001v3zM98.496 10.439l-9.276-9-1.093-1.061-2.186 2.121 1.093 1.061 9.276 9 1.093 1.061 2.186-2.121zM96.309 10.439l-9.276 9-1.093 1.061 2.186 2.121 1.093-1.061 9.276-9 1.093-1.061-2.186-2.121z"/>
 		    </svg>  
-		    <div class="button__text">BACK</div>
+		    <div class="button__text">MENU</div>
 		  </button>
 		</div>
 		<div class="container">
@@ -69,15 +74,9 @@
 			</div>
 			<div id="wordcloud"></div>
 		</div>
-		
-		<script>
-			function goBack() {
-			    window.history.back();
-			}
-		</script>
 		<script>
 			var frequency_list;
-		   var color = d3.scale.linear()
+			var color = d3.scale.linear()
 		   	.domain([0,1,2,3,4,5,6,10,15,20,100])
 		   	.range(["#c6ffb3", "#9fff80", "#8cff66", "#66ff33", "#40ff00", "#39e600", "#33cc00", "#2db300", "#269900", "#208000", "#1a6600", "#1a6600"]);
 
@@ -87,7 +86,6 @@
 				$.ajax({url: "/lastnamedata",
 					type: "GET",
 					success: function(output) {
-						console.log("called");
 						frequency_list = output;
 						d3.layout.cloud().size([1000, 550])
 		      			.words(frequency_list)
@@ -105,13 +103,13 @@
 
 		    function draw(words) {
 		      d3.select("#wordcloud").append("svg")
-		      	.attr("width", 2000)
+		      	.attr("width", 1500)
 		         .attr("height", 650)
 		         .attr("class", "wordcloud")
 		         .append("g")
 		         // without the transform, words words would get cutoff to the left and top, they would
 		         // appear outside of the SVG area
-		         .attr("transform", "translate(500,300)")
+		         .attr("transform", "translate(525,300)")
 		         .selectAll("text")
 		         .data(words)
 		         .enter().append("text")
