@@ -75,6 +75,104 @@ app.get("/visitors", function(req, res) {
 	res.sendFile(path + "visitorMenu.html");
 })
 
+//try prepocessing
+
+app.get("/agedata", function(req, res) {
+	// Grab from database
+	var cursor = db.collection('visitors').find();
+	var ageDict = {"under 10 years old": 0, "10-20 years old": 0, "20-30 years old": 0, "30-40 years old": 0, 
+		"40-50 years old": 0, "50-60 years old": 0, "60-70 years old": 0, "70-80 years old": 0, 
+		"80-90 years old": 0, "90-100 years old": 0}
+	var ave10 = 0, ave20 = 0, ave30 = 0, ave40 = 0, ave50 = 0, ave60 = 0, ave70 = 0, ave80 = 0, ave90 = 0, ave100 = 0;
+	
+	// Count all the first names
+	cursor.toArray(function(err, results) {
+		for(i=0; i<results.length; i++) {
+
+			var age = results[i]["age"];
+
+			switch(true) {
+				case(age < 10):
+					ave10 = ave10 * ageDict["under 10 years old"];
+					ageDict["under 10 years old"] = ageDict["under 10 years old"] + 1;
+					ave10 = (ave10 + age)/ageDict["under 10 years old"];
+					break;
+				case(age > 10 && age < 20):
+					ave20 = ave20 * ageDict["10-20 years old"];
+					ageDict["10-20 years old"] = ageDict["10-20 years old"] + 1;
+					ave20 = (ave20 + age)/ageDict["10-20 years old"];
+					break;
+				case(age > 20 && age < 30):
+					ave30 = ave30 * ageDict["20-30 years old"];
+					ageDict["20-30 years old"] = ageDict["20-30 years old"] + 1;
+					ave30 = (ave30 + age)/ageDict["20-30 years old"];
+					break;
+				case(age > 30 && age < 40):
+					ave40 = ave40 * ageDict["30-40 years old"];
+					ageDict["30-40 years old"] = ageDict["30-40 years old"] + 1;
+					ave40 = (ave40 + age)/ageDict["30-40 years old"];
+					break;
+				case(age > 40 && age < 50):
+					ave50 = ave50 * ageDict["40-50 years old"];
+					ageDict["40-50 years old"] = ageDict["40-50 years old"] + 1;
+					ave50 = (ave50 + age)/ageDict["40-50 years old"];
+					break;
+				case(age > 50 && age < 60):
+					ave60 = ave60 * ageDict["50-60 years old"];
+					ageDict["50-60 years old"] = ageDict["50-60 years old"] + 1;
+					ave60 = (ave60 + age)/ageDict["50-60 years old"];
+					break;
+				case(age > 60 && age < 70):
+					ave70 = ave70 * ageDict["60-70 years old"];
+					ageDict["60-70 years old"] = ageDict["60-70 years old"] + 1;
+					ave70 = (ave70 + age)/ageDict["60-70 years old"];
+					break;
+				case(age > 70 && age < 80):
+					ave80 = ave80 * ageDict["70-80 years old"];
+					ageDict["70-80 years old"] = ageDict["70-80 years old"] + 1;
+					ave80 = (ave80 + age)/ageDict["70-80 years old"];
+					break;
+				case(age > 80 && age < 90):
+					ave90 = ave90 * ageDict["80-90 years old"];
+					ageDict["80-90 years old"] = ageDict["80-90 years old"] + 1;
+					ave90 = (ave90 + age)/ageDict["80-90 years old"];
+					break;
+				case(age > 90 && age < 100):
+					ave100 = ave100 * ageDict["90-100 years old"];
+					ageDict["90-100 years old"] = ageDict["90-100 years old"] + 1;
+					ave100 = (ave100 + age)/ageDict["90-100 years old"];
+					break;
+			}
+		}
+
+		var id = 10;
+		var order = 1;
+		var ageArray = [];
+		var colors = ["#CC0066", "#E1514B", "#FB9F59", "#FEC574", "#EAF195", "#C7E89E", "#6CC4A4", 
+			"#4D9DB4", "#4776B4", "#993399"];
+		var aveAge = [ave10, ave20, ave30, ave40, ave50/10, ave60, ave70, ave80, ave90, ave100];
+		var x = 0;
+		for(var age in ageDict) {
+			temp = {};
+			temp["color"] = colors[x];
+			temp["id"] = "" + id;
+			temp["label"] = age;
+			temp["order"] = order;
+			temp["score"] = aveAge[x];
+			temp["weight"] = ageDict[age]/results.length * 100;
+			temp["width"] = 1;
+
+			ageArray.push(temp);
+
+			id += 10;
+			order++;
+			x++;
+		}
+
+		res.send(ageArray);
+	});
+});
+
 app.get("/genderdata", function(req, res) {
 	// Grab from database
 	var cursor = db.collection('visitors').find();
@@ -172,9 +270,13 @@ app.get("/firstnamedata", function(req, res) {
 	
 });
 
+app.get("/age", function(req, res) {
+	res.sendFile(path + "age.html");
+});
+
 app.get("/gender", function(req, res) {
 	res.sendFile(path + "gender.html");
-})
+});
 
 app.get("/lastname", function(req, res) {
 	res.sendFile(path + "lastname.html");
